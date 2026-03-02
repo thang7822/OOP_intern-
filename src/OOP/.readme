@@ -1,0 +1,6 @@
+Các tính chất cơ bản của OOP
+- Tính chất đóng gói thể hiện ở các hàm get và set ở các class như Employee, FullTimeEmployee, PartTimeEmployee
+- Tính chất kế thừa được thể hiện khi FullTime và PartTime extends Employee v các super(id,name,department) của 2 class con đó
+- Tính chất đa hình được thể hiện qua hàm calculate() trong interface Payble và được định nghĩa lại ở 2 class full time và partTime
+- Tính chất trừu tượng được thể hiện qua hàm interface và abstract class khi mà mình chỉ đưa ra tên của tính chất và chưa định nghĩa các tính chất đó
+
