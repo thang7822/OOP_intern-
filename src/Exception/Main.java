@@ -1,5 +1,7 @@
 package Exception;
 
+import Exception.exception.InsufficientBalanceException;
+import Exception.exception.InvalidAmountException;
 import Exception.model.Account;
 import Exception.service.Bank;
 
@@ -12,12 +14,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Bank bank = new Bank();
 
-        // Tạo 2 tài khoản mẫu
         bank.createAccount();
         bank.createAccount();
 
-        // Vì Bank của bạn chưa trả về Account
-        // nên ta tự tạo object để test
         Account acc1 = new Account();
         Account acc2 = new Account();
 
@@ -33,8 +32,8 @@ public class Main {
             int choice = sc.nextInt();
 
             try {
-                switch (choice) {
 
+                switch (choice) {
                     case 1:
                         System.out.print("Nhập số tiền nạp: ");
                         double tienGui = sc.nextDouble();
@@ -53,22 +52,16 @@ public class Main {
                         bank.transfer(acc1, acc2, tienChuyen);
                         System.out.println("Chuyển tiền thành công");
                         break;
-
-                    case 4:
-                        System.out.println("Số dư acc1: " + acc1.getBalance());
-                        System.out.println("Số dư acc2: " + acc2.getBalance());
-                        break;
-
-                    case 0:
-                        System.out.println("Thoát chương trình");
-                        return;
-
-                    default:
-                        System.out.println("Lựa chọn không hợp lệ");
                 }
 
-            } catch (Exception e) {
-                System.out.println("LỖI: " + e.getMessage());
+            }
+            catch (InvalidAmountException e) {
+                System.out.println("Lỗi số tiền không hợp lệ!");
+                e.printStackTrace();
+            }
+            catch (InsufficientBalanceException e) {
+                System.out.println("Không đủ số dư!");
+                e.printStackTrace();
             }
         }
     }
