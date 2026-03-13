@@ -1,7 +1,7 @@
-package Exception.model;
+package Exception.more_catch.model;
 
-import Exception.exception.InsufficientBalanceException;
-import Exception.exception.InvalidAmountException;
+import Exception.more_catch.exception.InsufficientBalanceException;
+import Exception.more_catch.exception.InvalidAmountException;
 
 public class Account {
     private double balance;

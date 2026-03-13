@@ -1,9 +1,9 @@
-package Exception;
+package Exception.more_catch;
 
-import Exception.exception.InsufficientBalanceException;
-import Exception.exception.InvalidAmountException;
-import Exception.model.Account;
-import Exception.service.Bank;
+import Exception.more_catch.exception.InsufficientBalanceException;
+import Exception.more_catch.exception.InvalidAmountException;
+import Exception.more_catch.model.Account;
+import Exception.more_catch.service.Bank;
 
 import java.util.Scanner;
 
